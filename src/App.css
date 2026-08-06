@@ -1,0 +1,21 @@
+.page {
+  width: 100%;
+  max-width: 900px;
+  padding: 60px 40px 140px;
+}
+
+.heading {
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 550;
+  line-height: 29px;
+  letter-spacing: -0.25px;
+  color: #010204;
+  margin-bottom: 32px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 388px 388px;
+  gap: 24px;
+}

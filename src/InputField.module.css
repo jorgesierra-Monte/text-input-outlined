@@ -1,0 +1,79 @@
+.field {
+  position: relative;
+  width: 388px;
+  height: 54px;
+  border-radius: 8px;
+  cursor: text;
+  background-color: #ffffff;
+  border: 1.25px solid #817f7d;
+  transition: border-color 200ms ease-out;
+}
+
+.default { border-color: #817f7d; }
+.hover   { border-color: #5f5f60; }
+.focus   { border: 2px solid #010204; }
+.typing  { border: 2px solid #010204; }
+.filled  { border-color: #817f7d; }
+
+/* Label — floats from center to top on focus/typing/filled (slide) */
+.label {
+  position: absolute;
+  left: 16px;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  transform-origin: left center;
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #5f5f60;
+  pointer-events: none;
+  transition: top var(--float-duration) var(--float-ease), transform var(--float-duration) var(--float-ease), opacity 120ms ease-out;
+}
+
+.focus .label,
+.typing .label,
+.filled .label {
+  top: 7px;
+  line-height: 16px;
+  transform: translateY(0) scale(0.75);
+}
+
+/* Input element */
+.input {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 23px;
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: calc(100% - 32px);
+  color: #010204;
+  caret-color: #010204;
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
+
+.focus .input,
+.typing .input,
+.filled .input {
+  opacity: 1;
+}
+
+.input::placeholder {
+  color: #5f5f60;
+  opacity: 1;
+}
+
+/* Mask template shown while focused but no digits typed yet */
+.masked {
+  color: #5f5f60 !important;
+}

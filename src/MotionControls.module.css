@@ -1,0 +1,176 @@
+.panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 300;
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid #ECEAE7;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(1, 2, 4, 0.14), 0 2px 8px rgba(1, 2, 4, 0.06);
+  font-family: 'Season VF', system-ui, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #f7f6f5;
+  border-bottom: 1px solid #ECEAE7;
+  cursor: grab;
+  touch-action: none;
+}
+
+.header:active {
+  cursor: grabbing;
+}
+
+.grip {
+  color: #97948E;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 550;
+  color: #010204;
+}
+
+.iconBtn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  color: #5f5f60;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 120ms ease-out;
+}
+
+.iconBtn:hover {
+  background: #ECEAE7;
+}
+
+.body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Visualizer */
+.viz {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #faf9f8;
+  border: 1px solid #ECEAE7;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.graph {
+  display: block;
+}
+
+.grid {
+  stroke: #E2DFDB;
+  stroke-width: 1;
+}
+
+.curve {
+  fill: none;
+  stroke: #010204;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.dot {
+  fill: #F25C3B;
+}
+
+/* Easing preset buttons */
+.easeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.easeBtn {
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #010204;
+  background: #f7f6f5;
+  border: 1px solid #ECEAE7;
+  border-radius: 8px;
+  padding: 7px 6px;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, color 120ms ease-out, border-color 120ms ease-out;
+}
+
+.easeBtn:hover {
+  background: #F0EEEB;
+}
+
+.easeBtn.active {
+  background: #010204;
+  border-color: #010204;
+  color: #ffffff;
+}
+
+/* Duration */
+.durationRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 550;
+  color: #010204;
+  white-space: nowrap;
+  min-width: 52px;
+}
+
+.range {
+  flex: 1;
+  min-width: 0;
+  accent-color: #010204;
+  cursor: pointer;
+}
+
+.numInput {
+  width: 68px;
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #010204;
+  background: #f7f6f5;
+  border: 1px solid #ECEAE7;
+  border-radius: 8px;
+  padding: 6px 8px;
+  outline: none;
+}
+
+.numInput:focus-visible {
+  border-color: #97948E;
+}
+
+.unit {
+  font-size: 12px;
+  color: #5f5f60;
+}
