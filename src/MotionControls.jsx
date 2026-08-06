@@ -43,7 +43,7 @@ const SAMPLES = 60
 
 export default function MotionControls() {
   const [duration, setDuration] = useState(160)
-  const [easeIdx, setEaseIdx] = useState(0)
+  const [easeIdx, setEaseIdx] = useState(1) // 'entrance'
   const [minimized, setMinimized] = useState(false)
   const [pos, setPos] = useState(null) // null = use CSS default position
   const [progress, setProgress] = useState(0)
