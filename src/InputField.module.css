@@ -10,7 +10,7 @@
 }
 
 .default { border-color: #817f7d; }
-.hover   { border-color: #5f5f60; }
+.hover   { border-color: #817f7d; }
 .focus   { border: 2px solid #010204; }
 .typing  { border: 2px solid #010204; }
 .filled  { border-color: #817f7d; }
