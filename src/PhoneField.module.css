@@ -1,0 +1,206 @@
+.wrapper {
+  position: relative;
+  width: 388px;
+}
+
+/* Outer field — Arc outlined, same states as the other inputs */
+.field {
+  position: relative;
+  width: 388px;
+  height: 54px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1.25px solid #817f7d;
+  transition: border-color 200ms ease-out;
+}
+
+.default { border-color: #817f7d; }
+.hover   { border-color: #5f5f60; }
+.focus   { border: 2px solid #010204; }
+.typing  { border: 2px solid #010204; }
+.filled  { border-color: #817f7d; }
+
+/* Country-code select segment (flag + chevron) */
+.country {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px 0 16px;
+  border: none;
+  background: transparent;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.country:hover {
+  background: #f4f2f0;
+}
+
+.flag {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.chevron {
+  display: flex;
+  align-items: center;
+  color: #010204;
+}
+
+/* Static chevron — no rotation on open (matches the select) */
+.chevronOpen {
+  transform: none;
+}
+
+/* Vertical divider between the country segment and the number input */
+.divider {
+  position: absolute;
+  left: 60px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: #cac6c2;
+}
+
+/* Floating label — sits in the number area (right of the divider) */
+.label {
+  position: absolute;
+  left: 74px;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  transform-origin: left center;
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #5f5f60;
+  pointer-events: none;
+  transition: top var(--float-duration) var(--float-ease), transform var(--float-duration) var(--float-ease), opacity 120ms ease-out;
+}
+
+.showValue .label {
+  top: 7px;
+  line-height: 16px;
+  transform: translateY(0) scale(0.75);
+}
+
+/* Number input */
+.input {
+  position: absolute;
+  left: 74px;
+  right: 16px;
+  top: 23px;
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: calc(100% - 90px);
+  color: #010204;
+  caret-color: #010204;
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
+
+.showValue .input {
+  opacity: 1;
+}
+
+/* Dropdown container (Arc select) */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e6e2de;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(1, 2, 4, 0.12), 0 2px 6px rgba(1, 2, 4, 0.06);
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  z-index: 100;
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #cac6c2 transparent;
+}
+
+.dropdown::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: #cac6c2;
+  border-radius: 9999px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 8px 4px;
+  background-clip: padding-box;
+}
+
+/* Country rows */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Season VF', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #010204;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, color 120ms ease-out;
+}
+
+.option:hover {
+  background-color: #f1efec;
+  color: #313132;
+}
+
+.optionSelected {
+  background-color: #f1efec;
+  color: #010204;
+}
+
+.option:active {
+  background-color: #cac6c2;
+  color: #010204;
+}
+
+.optFlag {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.optName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optDial {
+  flex-shrink: 0;
+  color: #5f5f60;
+  font-variant-numeric: tabular-nums;
+}

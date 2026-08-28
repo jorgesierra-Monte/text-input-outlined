@@ -1,6 +1,7 @@
 import InputField from './InputField'
-import MaskedInputField, { PHONE_CONFIG, DATE_CONFIG } from './MaskedInputField'
+import MaskedInputField, { DATE_CONFIG } from './MaskedInputField'
 import SelectField from './SelectField'
+import PhoneField from './PhoneField'
 import MotionControls from './MotionControls'
 import './App.css'
 
@@ -30,7 +31,7 @@ export default function App() {
       <h1 className="heading">Client information</h1>
       <div className="form">
         <SelectField label="Insurance"               placeholder="Select yours" options={INSURANCE_OPTIONS} />
-        <MaskedInputField label="Phone number"       config={PHONE_CONFIG} />
+        <PhoneField label="Phone number" />
         <InputField label="First name"               placeholder="John" />
         <MaskedInputField label="Birth date"         config={DATE_CONFIG} />
         <InputField label="Last name"                placeholder="Smith" />
